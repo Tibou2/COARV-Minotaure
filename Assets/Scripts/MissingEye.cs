@@ -17,7 +17,7 @@ public class MissingEye : MonoBehaviour
     public AudioClip openingSound;
     private AudioSource source;
 
-    private Vector3 eyeSocket = new Vector3(2f, 2f, 1.4f);  //Position souhaitée de l'oeil (repérée dans la scène, à modifier potentiellement)
+    private Vector3 eyeSocket = new Vector3(2f, 0.3f, 4f);  //Position souhaitée de l'oeil (repérée dans la scène, à modifier potentiellement)
     private float threshold = 1f;
     private float armLength = 2f; // correspond a la distance a laquelle on manipule le diamant
 
