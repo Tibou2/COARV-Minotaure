@@ -21,6 +21,8 @@ TagManager:
   - Point light2
   - Point light3
   - Point light4
+  - unplaced
+  - placed
   layers:
   - Default
   - TransparentFX

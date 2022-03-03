@@ -11,17 +11,19 @@ public class MoveEye : MonoBehaviour
     }
     void Move()
     {
-        if (Input.GetMouseButtonDown(0) && RayTracing.GetObject(gameObject.tag) == gameObject)
+        if (this.tag == "unplaced")
         {
-            // si le diamant est sélectionné on l'attache a la caméra.
-            GetComponent<Rigidbody>().useGravity = false;
-            transform.SetParent(Camera.main.transform);
+            if (Input.GetMouseButtonDown(0) && RayTracing.GetObject(gameObject.tag) == gameObject)
+            {
+                // si le diamant est sélectionné on l'attache a la caméra.
+                GetComponent<Rigidbody>().useGravity = false;
+                transform.SetParent(Camera.main.transform);
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                transform.SetParent(skull.transform); // il retrouve son père d'origine
+                GetComponent<Rigidbody>().useGravity = true;
+            }
         }
-        if (Input.GetMouseButtonUp(0))
-        {
-            transform.SetParent(skull.transform); // il retrouve son père d'origine
-            GetComponent<Rigidbody>().useGravity = true;
-        }
-
     }
 }
